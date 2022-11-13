@@ -27,11 +27,8 @@ public class MainActivity extends AppCompatActivity implements IMain.View {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
         mainPresenter = new MainPresenter(this);
         mainPresenter.created();
-
-
     }
 
     @Override
@@ -40,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements IMain.View {
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Loading..");
         binding.lytTool.imgbck.setVisibility(View.GONE);
-        binding.lytTool.toolbrLbl.setText("Home");
+        binding.lytTool.toolbrLbl.setText(" Home");
         if (CommonFunctions.isNetworkConnected(MainActivity.this)) {
             mainPresenter.getGameData();
         } else {
@@ -55,18 +52,13 @@ public class MainActivity extends AppCompatActivity implements IMain.View {
         binding.dateTime.setText(responseGame.getMatchdetail().getMatch().getDate() + " at " + responseGame.getMatchdetail().getMatch().getTime());
         binding.location.setText(responseGame.getMatchdetail().getVenue().getName());
         binding.teamName.setText(responseGame.getTeams().getTeamOne().getNameFull() + " vs " + responseGame.getTeams().getTeamTwo().getNameFull());
-
-        binding.seeMore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Gson gson = new Gson();
-                Intent intent = new Intent(MainActivity.this, Details_Page.class);
-                String myJson = gson.toJson(responseGame);
-                intent.putExtra("myjson", myJson);
-                startActivity(intent);
-            }
+        binding.seeMore.setOnClickListener(view -> {
+            Gson gson = new Gson();
+            Intent intent = new Intent(MainActivity.this, Details_Page.class);
+            String myJson = gson.toJson(responseGame);
+            intent.putExtra("myjson", myJson);
+            startActivity(intent);
         });
-        Log.e("TAG_responseGame", "onGetResult: " + responseGame.getTeams());
     }
 
     @Override

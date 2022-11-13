@@ -17,6 +17,60 @@
             android:id="@+id/lyt_tool"
             layout="@layout/tool_common" />
 
+        <LinearLayout
+            android:id="@+id/rltFilters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_f"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:text="Filter: "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="end"
+                    android:layout_toRightOf="@id/txt_f"
+                    android:orientation="horizontal">
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:id="@+id/lnrrattingFilter"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" />
+
+
+                    </HorizontalScrollView>
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,7 +82,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:id="@+id/card_team_one"
@@ -38,6 +92,7 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
                     android:orientation="vertical"
                     android:paddingLeft="0dp">
 
@@ -68,7 +123,6 @@
 
 
                     </LinearLayout>
-
 
 
                     <LinearLayout
@@ -119,6 +173,7 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
                     android:orientation="vertical"
                     android:paddingLeft="0dp">
 
@@ -149,7 +204,6 @@
 
 
                     </LinearLayout>
-
 
 
                     <LinearLayout
