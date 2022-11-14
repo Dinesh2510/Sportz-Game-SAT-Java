@@ -24,7 +24,6 @@ import android.widget.Toast;
 
 import com.app.sportsappjava.Adapter.AdapterClickListener;
 import com.app.sportsappjava.Adapter.PlayerAdapter;
-import com.app.sportsappjava.Models.FilterModel;
 import com.app.sportsappjava.R;
 import com.app.sportsappjava.Utlis.CommonFunctions;
 import com.app.sportsappjava.databinding.ActivityDetailsPageBinding;
@@ -39,7 +38,6 @@ import java.util.Objects;
 public class Details_Page extends AppCompatActivity {
     ActivityDetailsPageBinding binding;
     ResponseGame object;
-    ArrayList<FilterModel> modelArrayList = new ArrayList<>();
     String selected_filter_name = "";
     String str_team_one = "", str_team_two = "";
 

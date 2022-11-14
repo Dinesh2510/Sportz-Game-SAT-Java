@@ -91,5 +91,4 @@ public class MainActivity extends AppCompatActivity implements IMain.View {
         mainPresenter.onBackPressed();
     }
 
-    /*https://medium.com/@shri_chaudhari/working-with-mvp-and-retrofit-2-0-in-android-4016253ab3fc*/
 }
