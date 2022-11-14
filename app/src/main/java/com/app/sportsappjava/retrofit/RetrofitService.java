@@ -11,9 +11,6 @@ public interface RetrofitService {
 
     @GET("nzin01312019187360.json")
     Call<ResponseGame> getGameData();
-    /*
-    https://demo.sportz.io/sapk01222019186652.json
-        https://demo.sportz.io/nzin01312019187360.json
-    * */
+
 }
 
